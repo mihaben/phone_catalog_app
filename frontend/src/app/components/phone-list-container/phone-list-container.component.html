@@ -1,3 +1,7 @@
-<p>
-  phone-list-container works!
-</p>
+<div class="row list-wrapper">
+    <app-phone-detail-component 
+      *ngFor="let phone of phoneList" 
+      [phone]="phone">
+    </app-phone-detail-component>
+</div>
+

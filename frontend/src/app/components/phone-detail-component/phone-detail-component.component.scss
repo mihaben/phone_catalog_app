@@ -1,0 +1,10 @@
+@import '../../../styles/mixins.scss';
+
+.phone-wrapper {
+    @include border-radius(5px);
+    @include box-shadow(0, 3px, 20px, 0.1);
+    padding: 20px 15px;
+    min-height: 500px;
+    box-sizing: border-box;
+    background-color: white;
+}
