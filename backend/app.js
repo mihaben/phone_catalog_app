@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
+// Use the /public directory to show static files
 app.use(express.static('public'));
 
+// Allow cross origin
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -11,8 +13,10 @@ app.use(function(req, res, next) {
 
 app.get('/phones', function (req, res) {
 
+  // Static folder
   const BASE_IMAGES = `${req.protocol}://${req.get('Host')}/images`;
 
+  // Mock data
   const phones = [
     {
       id: 1,
@@ -109,8 +113,11 @@ app.get('/phones', function (req, res) {
     }
   ]
 
-  res.json(phones);
-
+  // We apply a setTimeout to see the spinner in the front
+  setTimeout(() => {
+    res.json(phones);
+  }, 3000);
+  
 });
 
 app.listen(3000, function () {
