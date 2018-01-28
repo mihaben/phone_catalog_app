@@ -7,7 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 // Components
 import { AppComponent } from './app.component';
 import { PhoneListContainerComponent } from './components/phone-list-container/phone-list-container.component';
-import { PhoneDetailComponentComponent } from './components/phone-detail-component/phone-detail-component.component';
+import { PhoneDetailComponent } from './components/phone-detail/phone-detail.component';
 import { LoadingComponent } from './components/loading/loading.component';
 
 // Services
@@ -21,7 +21,7 @@ import { PhoneEffects } from './store/effects';
   declarations: [
     AppComponent,
     PhoneListContainerComponent,
-    PhoneDetailComponentComponent,
+    PhoneDetailComponent,
     LoadingComponent
   ],
   imports: [

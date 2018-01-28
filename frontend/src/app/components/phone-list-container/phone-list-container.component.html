@@ -3,9 +3,9 @@
 <app-loading *ngIf="loading | async"></app-loading>
 
 <div *ngIf="phoneList | async" class="row list-wrapper animate fadeIn">
-    <app-phone-detail-component 
+    <app-phone-detail 
       *ngFor="let phone of phoneList | async" 
       [phone]="phone">
-    </app-phone-detail-component>
+    </app-phone-detail>
 </div>
 
