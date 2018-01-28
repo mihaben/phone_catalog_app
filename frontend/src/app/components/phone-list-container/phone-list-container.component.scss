@@ -1,0 +1,16 @@
+@import '../../../styles/mixins.scss';
+
+.filter {
+    @include border-radius(5px);
+    @include box-shadow(0, 3px, 5px, 0.1);
+    box-sizing: border-box;
+    margin: 25px 0;
+    width: 100%;
+    font-size: 24px;
+    border: none;
+    padding: 15px 15px;
+}
+
+input:focus {
+    outline:none;
+}

@@ -3,14 +3,16 @@ import * as PhoneActions from './actions';
 
 export interface State {
     loading: boolean;
-    searchTerms: string;
+    filterTerms: string;
     results: Phone[];
+    filteredResults: Phone[];
 }
 
 const initialState: State = {
     loading: false,
-    searchTerms: '',
-    results: []
+    filterTerms: '',
+    results: [],
+    filteredResults: [],
 };
 
 export function reducer(state = initialState, action: PhoneActions.Actions): State {
@@ -27,7 +29,8 @@ export function reducer(state = initialState, action: PhoneActions.Actions): Sta
             return {
                 ...state,
                 loading: false,
-                results: action.payload
+                results: action.payload,
+                filteredResults: action.payload,
             };
 
         case PhoneActions.LOAD_FAILED:
@@ -37,10 +40,24 @@ export function reducer(state = initialState, action: PhoneActions.Actions): Sta
                 results: []
             };
 
+        case PhoneActions.FILTER:
+            return {
+                ...state,
+                filterTerms: action.payload,
+                filteredResults: state.results.filter(phone => {
+
+                    const model = phone.model.toLowerCase();
+                    const filterTerms = action.payload.toLowerCase();
+
+                    return (model.indexOf(filterTerms) > -1) ? true : false;
+
+                })
+            };
+
         case PhoneActions.CHANGE_COLOR:
             return {
                 ...state,
-                results: state.results.map(phone => {
+                filteredResults: state.filteredResults.map(phone => {
                     return {
                         ...phone,
                         versions: phone.versions.map(version => {

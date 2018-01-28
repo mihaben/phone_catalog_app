@@ -1,4 +1,6 @@
-<h3 *ngIf="loading | async">loading...</h3>
+<input class="filter" (keyup)="onKey($event)" placeholder="Filter phones...">
+
+<app-loading *ngIf="loading | async"></app-loading>
 
 <div *ngIf="phoneList | async" class="row list-wrapper animate fadeIn">
     <app-phone-detail-component 
@@ -6,6 +8,4 @@
       [phone]="phone">
     </app-phone-detail-component>
 </div>
-
-<small>{{ phoneList | async | json }}</small>
 

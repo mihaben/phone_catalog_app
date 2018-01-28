@@ -21,11 +21,15 @@ export class PhoneListContainerComponent implements OnInit {
 
   constructor(private store: Store <fromRoot.State>) {
     this.loading = this.store.pipe(select('phonesReducer')).pipe(select('loading'));
-    this.phoneList = this.store.pipe(select('phonesReducer')).pipe(select('results'));
+    this.phoneList = this.store.pipe(select('phonesReducer')).pipe(select('filteredResults'));
   }
 
   ngOnInit() {
     this.store.dispatch(new Actions.Load());
+  }
+
+  onKey(event: any) {
+    this.store.dispatch(new Actions.Filter(event.target.value));
   }
 
 }
