@@ -7,13 +7,15 @@ import 'rxjs/add/operator/map';
 export class PhonesService {
 
   BASE_ENDPOINT: string;
+  BASE_PORT: number;
 
   constructor(private http: Http) {
-    this.BASE_ENDPOINT = 'https://jsonplaceholder.typicode.com';
+    this.BASE_ENDPOINT = 'http://localhost';
+    this.BASE_PORT = 3000;
   }
 
   getPhones(): Observable<any> {
-    return this.http.get(`${this.BASE_ENDPOINT}/posts`).map( res => res.json());
+    return this.http.get(`${this.BASE_ENDPOINT}:${this.BASE_PORT}/phones`).map( res => res.json());
   }
 
 }
