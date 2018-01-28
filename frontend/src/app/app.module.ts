@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 // Components
 import { AppComponent } from './app.component';
@@ -10,6 +12,10 @@ import { PhoneDetailComponentComponent } from './components/phone-detail-compone
 // Services
 import { PhonesService } from './services/phones.service';
 
+// ngrx
+import { reducer } from './store/reducer';
+import { PhoneEffects } from './store/effects';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +24,9 @@ import { PhonesService } from './services/phones.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    StoreModule.forRoot({phonesReducer: reducer}),
+    EffectsModule.forRoot([PhoneEffects])
   ],
   providers: [PhonesService],
   bootstrap: [AppComponent]
