@@ -1,10 +1,87 @@
 @import '../../../styles/mixins.scss';
 
+$yellow: #FFD706;
+
 .phone-wrapper {
     @include border-radius(5px);
     @include box-shadow(0, 3px, 20px, 0.1);
-    padding: 20px 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
     min-height: 500px;
     box-sizing: border-box;
     background-color: white;
+    margin-bottom: 50px;
+
+    img {
+        align-self: center;
+        max-width: 80%;
+    }
+
+    h2 {
+        font-size: 25px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .colors-wrapper {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        li {
+            @include border-radius(50%);
+            @include box-shadow(0, 1px, 1px, 0.5);
+            cursor: pointer;
+            margin: 0 5px;
+            float: left;
+            border: 3px solid white;
+            width: 30px;
+            height: 30px;
+
+            &.selected {
+                border-color: $yellow;
+            }
+            &.black {
+                background-color: black;
+            }
+            &.white {
+                background-color: white;
+            }
+            &.gray {
+                background-color: silver;
+            }
+            &.moka {
+                background-color: moccasin;
+            }
+
+        }
+    }
+
+    .description-wrapper {
+        @include border-radius(5px);
+        text-transform: capitalize;
+        list-style-type: none;
+        padding: 15px;
+        background-color: #F9F9F9;
+    }
+
+    .price-wrapper {
+        @include border-radius(50%);
+        @include box-shadow(0, 5px, 10px, 0.1);
+        position: absolute;
+        right: -15px;
+        bottom: -15px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $yellow;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
 }

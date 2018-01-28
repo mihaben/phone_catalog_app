@@ -1,3 +1,25 @@
-<div class="col-6 phone-wrapper">
-  <h2>{{ phone.title }}</h2>
+<div class="col-6 phone-wrapper animated fadeIn">
+
+  <img [src]="selectedImage()" [alt]="phone.model" class="animated fadeIn">
+
+  <h2>{{ phone.model }}</h2>
+
+  <ul class="colors-wrapper">
+    <li *ngFor="let version of phone.versions"
+      [class]="version.color"
+      [class.selected]="version.selected"
+      (click)="onClickColor(version.color)">
+    </li>
+  </ul>
+
+  <ul class="description-wrapper">
+    <li *ngFor="let item of phone.description">
+      {{ item }}
+    </li>
+  </ul>
+
+  <div class="price-wrapper">
+    {{ phone.price }}
+  </div>
+
 </div>

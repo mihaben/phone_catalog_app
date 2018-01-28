@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { Phone } from '../../models/phone.model';
+
 @Component({
   selector: 'app-phone-detail-component',
   templateUrl: './phone-detail-component.component.html',
@@ -7,11 +9,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PhoneDetailComponentComponent implements OnInit {
 
-  @Input() phone: any;
+  @Input() phone: Phone;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectedImage(): string {
+    return this.phone.versions.find(version => {
+      return version.selected = true;
+    }).image;
+  }
+
+  onClickColor(color: string): void {
+    console.log(color, 'clicked');
   }
 
 }
