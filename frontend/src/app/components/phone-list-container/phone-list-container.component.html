@@ -1,7 +1,11 @@
-<div class="row list-wrapper">
+<h3 *ngIf="loading | async">loading...</h3>
+
+<div *ngIf="phoneList | async" class="row list-wrapper">
     <app-phone-detail-component 
-      *ngFor="let phone of phoneList" 
+      *ngFor="let phone of phoneList | async" 
       [phone]="phone">
     </app-phone-detail-component>
 </div>
+
+<small>{{ phoneList | async | json }}</small>
 
