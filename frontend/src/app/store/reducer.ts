@@ -37,6 +37,33 @@ export function reducer(state = initialState, action: PhoneActions.Actions): Sta
                 results: []
             };
 
+        case PhoneActions.CHANGE_COLOR:
+            return {
+                ...state,
+                results: state.results.map(phone => {
+                    return {
+                        ...phone,
+                        versions: phone.versions.map(version => {
+                            if (phone.id === action.payload.id) {
+                                if (version.color === action.payload.color) {
+                                    return {
+                                        ...version,
+                                        selected: true
+                                    };
+                                } else {
+                                    return {
+                                        ...version,
+                                        selected: false
+                                    };
+                                }
+                            } else {
+                                return version;
+                            }
+                        })
+                    };
+                })
+            };
+
         default:
             return state;
 

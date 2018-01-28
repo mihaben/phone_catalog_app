@@ -1,6 +1,6 @@
 <h3 *ngIf="loading | async">loading...</h3>
 
-<div *ngIf="phoneList | async" class="row list-wrapper">
+<div *ngIf="phoneList | async" class="row list-wrapper animate fadeIn">
     <app-phone-detail-component 
       *ngFor="let phone of phoneList | async" 
       [phone]="phone">

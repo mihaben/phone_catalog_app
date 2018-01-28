@@ -10,6 +10,9 @@ export const LOAD = 'Phone list loading';
 export const LOAD_DONE = 'Phone list loading done';
 export const LOAD_FAILED = 'Phone list loading failed';
 
+// Change color
+export const CHANGE_COLOR = "Change color";
+
 export class Load implements Action {
     readonly type = LOAD;
     constructor() {}
@@ -25,4 +28,9 @@ export class LoadFailed implements Action {
     constructor() {}
 }
 
-export type Actions = Load | LoadDone | LoadFailed;
+export class ChangeColor implements Action {
+    readonly type = CHANGE_COLOR;
+    constructor(public payload: any) {}
+}
+
+export type Actions = Load | LoadDone | LoadFailed | ChangeColor;

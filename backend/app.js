@@ -83,14 +83,14 @@ app.get('/phones', function (req, res) {
       description: ['potente', 'versatil', '64gb disco duro'],
       versions: [
         {
-          selected: true,
+          selected: false,
           color: 'black',
-          image: `${BASE_IMAGES}/huawei_black.png`
+          image: `${BASE_IMAGES}/huaweip10_black.png`
         },
         {
-          selected: false,
+          selected: true,
           color: 'white',
-          image: `${BASE_IMAGES}/huawei_white.png`
+          image: `${BASE_IMAGES}/huaweip10_white.png`
         }
       ]
     },
