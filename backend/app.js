@@ -21,8 +21,8 @@ app.get('/phones', function (req, res) {
     {
       id: 1,
       model: 'Iphone X',
-      price: 999,
-      description: ['potente', 'versatil', '64gb disco duro'],
+      price: 1329,
+      description: ['iOS 11', '256GB disco duro', '5.8" de pantalla', 'Cámara dual de 12MP'],
       versions: [
         {
           selected: true,
@@ -33,9 +33,9 @@ app.get('/phones', function (req, res) {
     },
     {
       id: 2,
-      model: 'Samsung S8',
-      price: 800,
-      description: ['potente', 'versatil', '64gb disco duro'],
+      model: 'Samsung S8+',
+      price: 849,
+      description: ['SO Android', '64GB de disco duro', '6.2" de pantalla', 'Cobertura 5G'],
       versions: [
         {
           selected: true,
@@ -46,9 +46,9 @@ app.get('/phones', function (req, res) {
     },
     {
       id: 3,
-      model: 'Huawei Mate',
-      price: 800,
-      description: ['potente', 'versatil', '64gb disco duro'],
+      model: 'Huawei Mate 10',
+      price: 699,
+      description: ['SO Android 8', '64GB de disco duro', '5.9" de pantalla', 'Cámara de 20MP + 12px'],
       versions: [
         {
           selected: true,
@@ -65,8 +65,8 @@ app.get('/phones', function (req, res) {
     {
       id: 4,
       model: 'Iphone 8',
-      price: 800,
-      description: ['potente', 'versatil', '64gb disco duro'],
+      price: 779,
+      description: ['iOS 11', '64GB disco duro', '4.7" de pantalla', 'Cámara de 12MP'],
       versions: [
         {
           selected: true,
@@ -83,8 +83,8 @@ app.get('/phones', function (req, res) {
     {
       id: 5,
       model: 'Huawei P10',
-      price: 800,
-      description: ['potente', 'versatil', '64gb disco duro'],
+      price: 449,
+      description: ['SO Android', '64GB de disco duro', 'Cobertura 4G+', '4GB memoria RAM'],
       versions: [
         {
           selected: false,
@@ -101,8 +101,8 @@ app.get('/phones', function (req, res) {
     {
       id: 6,
       model: 'Samsung Galaxy Note 8',
-      price: 800,
-      description: ['potente', 'versatil', '64gb disco duro'],
+      price: 999,
+      description: ['SO Android 7.1', '64GB de disco duro', '6.3" de pantalla', 'Cámara dual de 12MP'],
       versions: [
         {
           selected: true,
