@@ -36,3 +36,8 @@ The server will be working on http://localhost:3000
 `$ ng serve`
 
 The web server will be working on http://localhost:4200/
+
+#### Testing
+
+* Run unit tests (9 specs)
+`$ ng test`

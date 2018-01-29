@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { StoreModule, Store } from '@ngrx/store';
+import { reducer } from '../../store/reducer';
 import { PhoneListContainerComponent } from './phone-list-container.component';
+import { PhoneDetailComponent } from '../phone-detail/phone-detail.component';
+import { LoadingComponent } from '../loading/loading.component';
 
 describe('PhoneListContainerComponent', () => {
   let component: PhoneListContainerComponent;
@@ -8,7 +11,10 @@ describe('PhoneListContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhoneListContainerComponent ]
+      declarations: [ PhoneListContainerComponent, PhoneDetailComponent, LoadingComponent ],
+      imports: [
+        StoreModule.forRoot({phonesReducer: reducer}),
+      ]
     })
     .compileComponents();
   }));

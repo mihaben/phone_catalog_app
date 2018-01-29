@@ -1,20 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule, Store } from '@ngrx/store';
+import { reducer } from '../../store/reducer';
 
-import { PhoneDetailComponentComponent } from './phone-detail-component.component';
+import { PhoneDetailComponent } from './phone-detail.component';
 
-describe('PhoneDetailComponentComponent', () => {
-  let component: PhoneDetailComponentComponent;
-  let fixture: ComponentFixture<PhoneDetailComponentComponent>;
+describe('PhoneDetailComponent', () => {
+  let component: PhoneDetailComponent;
+  let fixture: ComponentFixture<PhoneDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhoneDetailComponentComponent ]
+      declarations: [ PhoneDetailComponent ],
+      imports: [
+        StoreModule.forRoot({phonesReducer: reducer}),
+      ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PhoneDetailComponentComponent);
+    fixture = TestBed.createComponent(PhoneDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,4 +27,5 @@ describe('PhoneDetailComponentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
